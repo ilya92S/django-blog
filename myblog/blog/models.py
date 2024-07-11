@@ -31,3 +31,10 @@ class Comments(models.Model):
     def __str__(self):
         return f'{self.name}, {self.post}'
 
+
+class Likes(models.Model):
+    """Лайки"""
+    ip = models.CharField('IP-адрес', max_length=100)
+    post = models.ForeignKey(Post, verbose_name='Публикация', on_delete=models.CASCADE)
+
+
